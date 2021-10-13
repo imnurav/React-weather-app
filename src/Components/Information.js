@@ -6,17 +6,19 @@ import Brightness5Icon from "@mui/icons-material/Brightness5";
 import OpacityIcon from "@mui/icons-material/Opacity";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import CloudIcon from "@mui/icons-material/Cloud";
+import moment from "moment";
+
 const useStyles = makeStyles({
   component: {
-    margin: "45px 105px",
+    margin: "30px 95px",
   },
   container: {
     display: "flex",
   },
   row: {
-    padding: 11,
-    fontSize: 20,
-    letterSpacing: 4,
+    padding: 10,
+    fontSize: 18,
+    letterSpacing: 2,
   },
   value: {
     color: "#fff",
@@ -55,6 +57,9 @@ const Information = ({ data, city, country }) => {
 
   return data && city && country ? (
     <Box className={classes.component}>
+      <Typography className={classes.row}>
+        <span>{moment().format("LLLL")}</span>
+      </Typography>
       <Typography className={classes.row}>
         <PinDropIcon className={classes.icon} />
         Location:
